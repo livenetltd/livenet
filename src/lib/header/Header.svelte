@@ -1,5 +1,6 @@
 <script lang="ts">
-	const click = () => document.getElementById("nav")?.classList.toggle("active")
+	let open: boolean = true;
+	const click = () => open = !open;
 </script>
 
 <header>
@@ -36,7 +37,7 @@
 	</div>
 </header>
 
-<div id="nav">
+<div id="nav" class={open ? "active" : ""}>
 	<nav>
 		<ul>
 			<li><a href="/" title="Home">Home</a></li>
@@ -65,9 +66,6 @@
 		-webkit-backdrop-filter: blur(6px);
 		backdrop-filter: blur(6px);
 
-		&.active{
-			left: 100%;
-		}
 		nav ul {
 			list-style: none;
 			padding: 0;

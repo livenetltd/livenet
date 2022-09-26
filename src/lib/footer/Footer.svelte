@@ -1,5 +1,9 @@
+<script lang="ts">
+	const year = new Date().getFullYear()
+</script>
+
 <footer>
-	<p>LiveNet Ⓒ 2014 - 2022</p>
+	<p>LiveNet Ⓒ 2014 - {year}</p>
 	<p>Todos os direitos reservados</p>
 </footer>
 
