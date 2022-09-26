@@ -5,27 +5,27 @@
 		Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 	--font-mono: 'Fira Mono', monospace;
 	--pure-white: #ffffff;
-	--primary-color: #b9c6d2;
-	--secondary-color: #d0dde9;
-	--tertiary-color: #edf0f8;
-	--accent-color: #ff3e00;
+	--lightblack-color: #49596A;
+	--lightblue-color: #E2F2F6;
+	--primary-color: #1585DC;
+	--secundary-color: #1666A7;
+	--tertiary-color: #174772;
+	--quartiary-color: #19293E;
+	--transparentwhite-color: rgba(226, 242, 246, .8);
 	--heading-color: rgba(0, 0, 0, 0.7);
 	--text-color: #444444;
 	--background-without-opacity: rgba(255, 255, 255, 0.7);
 	--column-width: 42rem;
 	--column-margin-top: 4rem;
 }
-
+*{
+	font-family: Rubik;
+	color: var(--lightblack-color);
+}
 body {
 	min-height: 100vh;
 	margin: 0;
-	background-color: var(--primary-color);
-	background: linear-gradient(
-		180deg,
-		var(--primary-color) 0%,
-		var(--secondary-color) 10.45%,
-		var(--tertiary-color) 41.35%
-	);
+	background-color: var(--lightblue-color);
 }
 
 body::before {
@@ -43,7 +43,13 @@ body::before {
 	);
 	opacity: 0.05;
 }
-
+input,
+textarea,
+button,
+select,
+a {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
 #svelte {
 	min-height: 100vh;
 	display: flex;

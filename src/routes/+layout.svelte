@@ -1,6 +1,8 @@
 <script lang="ts">
-	import Header from '$lib/header/Header.svelte';
+	import Footer from '$lib/footer/Footer.svelte';
+import Header from '$lib/header/Header.svelte';
 	import '../app.css';
+	import '../fonts.css';
 </script>
 
 <Header />
@@ -9,10 +11,7 @@
 	<slot />
 </main>
 
-<footer>
-	<p>LiveNet Ⓒ 2014 - 2022</p>
-	<p>Todos os direitos reservados</p>
-</footer>
+<Footer />
 
 <style>
 	main {
@@ -24,19 +23,5 @@
 		max-width: 1024px;
 		margin: 0 auto;
 		box-sizing: border-box;
-	}
-
-	footer {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		padding: 40px;
-	}
-
-	@media (min-width: 480px) {
-		footer {
-			padding: 40px 0;
-		}
 	}
 </style>

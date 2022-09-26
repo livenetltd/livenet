@@ -1,10 +1,10 @@
 <script lang="ts">
-	import { page } from '$app/stores';
+	const click = () => document.getElementById("nav")?.classList.toggle("active")
 </script>
 
 <header>
 	<div id="nav-brand">
-		<a href="https://kit.svelte.dev">
+		<a href="/" title="Home">
 			<svg width="104" height="26" viewBox="0 0 104 26" fill="none" xmlns="http://www.w3.org/2000/svg">
 				<circle cx="11.9427" cy="8.73664" r="1.68321" fill="#1585DC"/>
 				<circle cx="17.7939" cy="16.0305" r="1.44275" fill="#1585DC"/>
@@ -29,25 +29,75 @@
 			</svg>	
 		</a>
 	</div>
-	<div id="menu-icon">
+	<div id="menu-icon" on:click={click}>
 		<svg width="30" height="31" viewBox="0 0 30 31" fill="none" xmlns="http://www.w3.org/2000/svg">
 			<path d="M6.25 23H20C20.6875 23 21.25 22.4375 21.25 21.75C21.25 21.0625 20.6875 20.5 20 20.5H6.25C5.5625 20.5 5 21.0625 5 21.75C5 22.4375 5.5625 23 6.25 23ZM6.25 16.75H16.25C16.9375 16.75 17.5 16.1875 17.5 15.5C17.5 14.8125 16.9375 14.25 16.25 14.25H6.25C5.5625 14.25 5 14.8125 5 15.5C5 16.1875 5.5625 16.75 6.25 16.75ZM5 9.25C5 9.9375 5.5625 10.5 6.25 10.5H20C20.6875 10.5 21.25 9.9375 21.25 9.25C21.25 8.5625 20.6875 8 20 8H6.25C5.5625 8 5 8.5625 5 9.25ZM26.625 19.1L23.025 15.5L26.625 11.9C27.1125 11.4125 27.1125 10.625 26.625 10.1375C26.1375 9.65 25.35 9.65 24.8625 10.1375L20.375 14.625C19.8875 15.1125 19.8875 15.9 20.375 16.3875L24.8625 20.875C25.35 21.3625 26.1375 21.3625 26.625 20.875C27.1 20.3875 27.1125 19.5875 26.625 19.1Z" fill="#1585DC"/>
 		</svg>
 	</div>
-
 </header>
 
-<style>
+<div id="nav">
+	<nav>
+		<ul>
+			<li><a href="/" title="Home">Home</a></li>
+			<li><a href="/planos" title="Planos">Planos</a></li>
+			<li><a href="/servicos" title="Serviços Adicionais">Serviços Adicionais</a></li>
+			<li><a href="/somos" title="Quem Somos">Quem Somos</a></li>
+			<li><a href="/cobertura" title="Cobertura">Cobertura</a></li>
+			<li><a href="/faq" title="FAQ">FAQ</a></li>
+		</ul>
+	</nav>
+</div>
+
+<style lang="scss">
+	#nav, header{z-index: 9999999;}
+	#nav {
+		position: fixed;
+		background-color: var(--transparentwhite-color);
+		top: 50%;
+		min-width: max-content;
+		left: 50%;
+		padding: 1em 2em;
+		transition: left .3s cubic-bezier(0.39, 0.575, 0.565, 1);
+		transform: translate(-50%, -50%);
+		border-radius: 1.5em;
+		box-shadow: 0px 10px 25px rgba(21, 133, 220, 0.34);
+		-webkit-backdrop-filter: blur(6px);
+		backdrop-filter: blur(6px);
+
+		&.active{
+			left: 100%;
+		}
+		nav ul {
+			list-style: none;
+			padding: 0;
+
+			li {
+				font-size: 1rem;
+
+				&:not(:last-child) {
+					margin-bottom: 1em;
+				}
+			}
+		}
+	}
 	header {
 		width: 100%;
-		max-width: 100%;
-		padding: 1em 0 .6em;
-		background-color: #E2F2F6;
-		opacity: .8;
-		-webkit-backdrop-filter: blur(10px);
-  		backdrop-filter: blur(10px);
+		padding: 1em 0 .5em;
+		background-color: var(--transparentwhite-color);
+		flex: 1;
+		-webkit-backdrop-filter: blur(6px);
+  		backdrop-filter: blur(6px);
 		position: fixed;
 		display: flex;
-		justify-content: space-around;
+		justify-content: space-between;
+
+		#nav-brand a svg {
+			width: 104px;
+			height: auto;
+		}
+		#menu-icon {
+			cursor: pointer;
+		}
 	}
 </style>
