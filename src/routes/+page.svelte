@@ -15,7 +15,7 @@
 			</h1>
 			<h2>Rolim de Moura</h2>
 	
-			<button>Assinar</button>
+			<a class="btn-hero" href="/planos">Assinar</a>
 		</div>
 		<div id="blur-1"></div>
 		<div id="blur-2"></div>
@@ -124,9 +124,10 @@
 				flex-direction: column;
 				justify-content: center;
 				align-items: center;
-				button {
+				.btn-hero {
 					margin-top: 3em;
 					border-radius: .8em;
+					text-decoration: none;
 					color: #E2F2F7;
 					background-color: transparent;
 					border: .01em solid #E2F2F7;

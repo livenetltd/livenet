@@ -1,6 +1,8 @@
 <script lang="ts">
-	let open: boolean = true;
-	const click = () => open = !open;
+
+	 
+	let open: boolean = false;
+	const click = () => open = !open
 </script>
 
 <header>
@@ -37,8 +39,11 @@
 	</div>
 </header>
 
-<div id="nav" class={open ? "active" : ""}>
+
+<div id="nav" class:open>
 	<nav>
+		<a href="/central" rel="noopener noreferrer">Central do Cliente</a>
+		<div class="divisor"></div>
 		<ul>
 			<li><a href="/" title="Home">Home</a></li>
 			<li><a href="/planos" title="Planos">Planos</a></li>
@@ -49,27 +54,53 @@
 		</ul>
 	</nav>
 </div>
+<div id="nav-background" on:click={click} class:open></div>
 
 <style lang="scss">
 	#nav, header{z-index: 9999999;}
+	#nav-background {
+		position: fixed;
+		top: 0;
+		z-index: 999;
+		width: 100vw;
+		height: 100vh;
+		background-color: #00000001;
+		display: none;
+
+		&.open {
+			display: block;
+		}
+	}
 	#nav {
+		&.open{
+			right: 50%;
+		}
 		position: fixed;
 		background-color: var(--transparentwhite-color);
 		top: 50%;
 		min-width: max-content;
-		left: 50%;
+		right: -120%;
 		padding: 1em 2em;
-		transition: left .3s cubic-bezier(0.39, 0.575, 0.565, 1);
-		transform: translate(-50%, -50%);
+		transition: right .3s cubic-bezier(0.39, 0.575, 0.565, 1);
+		transform: translate(50%, -50%);
 		border-radius: 1.5em;
 		box-shadow: 0px 10px 25px rgba(21, 133, 220, 0.34);
 		-webkit-backdrop-filter: blur(6px);
-		backdrop-filter: blur(6px);
+		backdrop-filter: blur(4px);
 
-		nav ul {
-			list-style: none;
-			padding: 0;
-
+		nav {
+			& > a {
+				font-weight: bold;
+			}
+			.divisor {
+				height: 2px;
+				background-color: var(--lightblack-color);
+				margin-top: 10px;
+			}
+			ul {
+				list-style: none;
+				padding: 0;
+			}
 			li {
 				font-size: 1rem;
 
@@ -85,7 +116,7 @@
 		background-color: var(--transparentwhite-color);
 		flex: 1;
 		-webkit-backdrop-filter: blur(6px);
-  		backdrop-filter: blur(6px);
+  		backdrop-filter: blur(4px);
 		position: fixed;
 		display: flex;
 		justify-content: space-between;
@@ -95,6 +126,11 @@
 			height: auto;
 		}
 		#menu-icon {
+			&:focus{
+				outline:none !important;
+				-webkit-tap-highlight-color: rgba($color: #000000, $alpha: 0);
+
+			}
 			cursor: pointer;
 		}
 	}

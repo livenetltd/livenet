@@ -20,7 +20,6 @@ import Header from '$lib/header/Header.svelte';
 		flex-direction: column;
 		padding: 0;
 		width: 100%;
-		max-width: 1024px;
 		margin: 0 auto;
 		box-sizing: border-box;
 	}
