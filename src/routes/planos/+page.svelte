@@ -1,20 +1,8 @@
-<script>
-	import {PUBLIC_MKAUTH_ADDRESS, PUBLIC_CLIENT_ID} from '$env/static/public'
-	import { onMount } from 'svelte'
+<script lang="ts">
+	import {PUBLIC_MKAUTH_ADDRESS, PUBLIC_CLIENT_ID} from '$env/static/public';
+	import { onMount } from 'svelte';
 
-	console.log(`Endereço do MK-AUTH: ${PUBLIC_MKAUTH_ADDRESS}`)
-	onMount(async () => await fetch(`https://${PUBLIC_MKAUTH_ADDRESS}/api/clientes/listagem`, {
-			headers: {
-				"Authorization": "Bearer " + new Buffer( PUBLIC_CLIENT_ID + ":" + import.meta.env.CLIENT_SECRET ).toString('base64')
-			}
-		})
-		.then(res => {
-			res.json()
-		})
-		.then(data => console.log(data))
-		.catch(err => console.error(err.message))
-	)
-
+	onMount(() => console.log(PUBLIC_CLIENT_ID))
 </script>
 
 <svelte:head>

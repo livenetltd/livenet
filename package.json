@@ -1,6 +1,17 @@
 {
 	"name": "livenet",
 	"version": "0.0.1",
+	"description": "",
+	"repository": {
+		"url": "https://github.com/livenetltd/livenet"
+	},
+	"author": {
+		"name": "Adeir do Bom Fim Junior",
+		"email": "4adeirj@gmail.com",
+		"url": "https://github.com/adeirjunior"
+	},
+	"contributors": [],
+	"categories": [],
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",
