@@ -1,8 +1,20 @@
 <script lang="ts">
-	import {PUBLIC_MKAUTH_ADDRESS, PUBLIC_CLIENT_ID} from '$env/static/public';
-	import { onMount } from 'svelte';
+	import {onMount} from 'svelte';
+	import {PUBLIC_MKAUTH_ADDRESS} from '$env/static/public';
+	import {getPlans} from '$lib/planos.model';
 
-	onMount(() => console.log(PUBLIC_CLIENT_ID))
+	const {token} = getPlans();
+	let planos: any;
+
+	const headers = new Headers();
+	headers.set('Authorization', `Bearer ${token}`);
+	headers.set('Content-Type', 'application/json');
+
+	onMount(async () => await fetch(`http://${PUBLIC_MKAUTH_ADDRESS}/api/plano/listagem`, {headers})
+		.then(res => res.json())
+		.then(data => planos = data)
+		.catch(err => console.error(err))
+	)
 </script>
 
 <svelte:head>
