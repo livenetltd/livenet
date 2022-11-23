@@ -1,8 +1,10 @@
 <script lang="ts">
+	import Waves from '$lib/svgs/waves.svelte'
 	const year = new Date().getFullYear()
 </script>
 
 <footer>
+	<Waves />
 	<div class="ft1"></div>
 	<div class="ft2"></div>
 	<div class="ft3"></div>
@@ -21,7 +23,7 @@
 		align-items: center;
 
 		& > div {
-			height: 100px;
+			height: 65px;
 			width: 100%;
 		}
 		.ft1 {
@@ -35,10 +37,16 @@
 		}
 		.ft4 {
 			background-color: var(--quartiary-color) !important;
-
+			text-align: center;
+			display: flex;
+			align-items: center;
+			flex-direction: column;
+			
 
 			p {
 				color: #3F587A;
+				font-size: 0.563rem;
+				font-weight: bold;
 			}
 		}
 	}

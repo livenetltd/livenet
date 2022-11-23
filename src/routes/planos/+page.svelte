@@ -1,21 +1,5 @@
 <script>
 	import { onMount } from 'svelte'
-
-
-onMount(async () => await fetch(`http://Client_Id_e22d6064f6f582610cae5e82373b34ea:Client_Secret_84bfe4c3f44463b69709b274f9a1272257f18c1a@172.31.255.2/api/cliente/`, {
-	mode: 'cors',
-	cache: 'no-cache',
-	headers: {
-		'Authorization': `Bearer`,
-		'Content-Type' : 'application/json',
-	}
-})
-		.then(res => res.json())
-		.then(person => console.log(`Dados: ${person}`))
-		.catch(err => {
-			console.error(err.message)
-		})
-)
 	
 </script>
 
