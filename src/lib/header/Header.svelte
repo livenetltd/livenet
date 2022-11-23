@@ -94,7 +94,6 @@
 		width: 100%;
 		padding: 1em 0 .5em;
 		background-color: var(--transparentwhite-color);
-		flex: 1;
 		-webkit-backdrop-filter: blur(6px);
   		backdrop-filter: blur(4px);
 		position: fixed;
@@ -112,8 +111,10 @@
 				outline:none !important;
 				-webkit-tap-highlight-color: rgba($color: #000000, $alpha: 0);
 
+				}
+				cursor: pointer;
 			}
-			cursor: pointer;
 		}
-	}
+		
+	
 </style>

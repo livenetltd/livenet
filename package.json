@@ -1,6 +1,17 @@
 {
 	"name": "livenet",
 	"version": "0.0.1",
+	"description": "",
+	"repository": {
+		"url": "https://github.com/livenetltd/livenet"
+	},
+	"author": {
+		"name": "Adeir do Bom Fim Junior",
+		"email": "4adeirj@gmail.com",
+		"url": "https://github.com/adeirjunior"
+	},
+	"contributors": [],
+	"categories": [],
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",
@@ -16,6 +27,7 @@
 		"@sveltejs/adapter-auto": "next",
 		"@sveltejs/kit": "next",
 		"@types/cookie": "^0.5.1",
+		"@types/jsonwebtoken": "^8.5.9",
 		"@typescript-eslint/eslint-plugin": "^5.27.0",
 		"@typescript-eslint/parser": "^5.27.0",
 		"eslint": "^8.16.0",
