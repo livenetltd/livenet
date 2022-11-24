@@ -7,17 +7,12 @@
 	--font-mono: 'Fira Mono', monospace;
 	--pure-white: #ffffff;
 	--lightblack-color: #49596A;
-	--lightblue-color: #E2F2F6;
+	--white: #E2F2F6;
 	--primary-color: #1585DC;
 	--secundary-color: #1666A7;
 	--tertiary-color: #174772;
 	--quartiary-color: #19293E;
-	--transparentwhite-color: rgba(226, 242, 246, .8);
-	--heading-color: rgba(0, 0, 0, 0.7);
-	--text-color: #444444;
-	--background-without-opacity: rgba(255, 255, 255, 0.7);
-	--column-width: 42rem;
-	--column-margin-top: 4rem;
+	--transparent-white: rgba(226, 242, 246, .8);
 }
 * {
 	margin: 0;
@@ -29,7 +24,7 @@ h1, h2, h3, h4, h5, h6, p, span, input, select, button {
 }
 body {
 	min-height: 100vh;
-	background-color: var(--lightblue-color);
+	background-color: var(--white);
 }
 
 body::before {
@@ -61,7 +56,10 @@ a {
 }
 
 p {
+	font-size: 0.875rem;
 	line-height: 1.5;
+	text-align: center;
+	font-weight: 300;
 }
 
 a {
@@ -73,9 +71,11 @@ h1 {
 	font-size: 2rem;
 	text-align: center;
 }
-
+h4 {
+	font-size: 0.875rem;
+}
 h2 {
-	font-size: 1rem;
+	font-size: 1.125rem;
 }
 
 pre {
@@ -102,5 +102,13 @@ button:focus:not(:focus-visible) {
 @media (min-width: 720px) {
 	h1 {
 		font-size: 2.4rem;
+	}
+}
+@media only screen and (min-width: 327px) {
+	h2{
+		font-size: 1.5rem;
+	}
+	h4 {
+		font-size: .9rem;
 	}
 }

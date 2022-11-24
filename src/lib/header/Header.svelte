@@ -56,7 +56,7 @@
 			right: 50%;
 		}
 		position: fixed;
-		background-color: var(--transparentwhite-color);
+		background-color: var(--transparent-white);
 		top: 50%;
 		min-width: max-content;
 		right: -120%;
@@ -93,7 +93,7 @@
 	header {
 		width: 100%;
 		padding: 1em 0 .5em;
-		background-color: var(--transparentwhite-color);
+		background-color: var(--transparent-white);
 		-webkit-backdrop-filter: blur(6px);
   		backdrop-filter: blur(4px);
 		position: fixed;

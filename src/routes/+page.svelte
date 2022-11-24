@@ -5,6 +5,9 @@
 	import HBO from '$lib/svgs/hboMax.svelte';
 	import Deezer from '$lib/svgs/deezer.svelte';
 	import Radio from '$lib/svgs/radio.svelte';
+	import Internet1 from '$lib/svgs/Internet1.svelte';
+	import Internet2 from '$lib/svgs/internet2.svelte';
+	import Elipse from '$lib/svgs/elipse.svelte';
 </script>
 
 <svelte:head>
@@ -48,7 +51,7 @@
 				<Deezer />
 			</li>
 			<li>
-				<HBO />
+				<HBO/>
 			</li>
 			<li>
 				<TNT />
@@ -62,13 +65,20 @@
 		<h2>Chegou a hora de se modernizar</h2>
 		<Radio classname="radio-home"/>
 		<div class="modernizar-background">
-			
+			<div class="container">
+				<p>Com uma internet tão rápida quanto a fibra, estamos trazendo uma conexão de qualidade pelo ar, sem fazer postes ficarem cheios de fios.</p>
+				<Internet1 classname="modernizar-svg" />
+				<p>Contratos, pagamentos, mudança de planos, e suporte podem ser realizados por meio do nosso aplicativo ou site.</p>
+				<Internet2 classname="modernizar-svg" />
+				<p>Temos atendentes ativos aguardando o seu contato, seja por meio das redes sociais,  telefone, em nosso escritório ou aplicativo.</p>
+			</div>
+			<Elipse />
 		</div>
 	</section>
 </div>
 
 <style lang="scss">
-
+	
 	div {
 		#modernizar {
 			margin-top: 5em;
@@ -80,16 +90,34 @@
 				min-height: 300px;
 				background-color: var(--quartiary-color);
 				margin-top: -1em;
+				display: flex;
+				padding-top: 2em;
+					flex-direction: column;
+					align-items: center;
+				.container {
+					max-width: 240px;
+					display: flex;
+					margin: 0 1em;
+					flex-direction: column;
+					align-items: center;
+					p {color: var(--white);}
+
+					:global(.modernizar-svg) {
+						width: 100%;
+						margin: 2em 0;
+					}
+				}
+				
 			}
 			h2 {
 				text-align: center;
 				text-transform: uppercase;
-				font-size: 1.125rem;
 				font-weight: bold;
 				background: linear-gradient(90deg, #2A5D85 43.58%, #247CCB 86.12%);
 				-webkit-background-clip: text;
 				-webkit-text-fill-color: transparent;
 				background-clip: text;
+
 			}
 		}
 		#brands {
@@ -147,20 +175,19 @@
 				}
 				h1 {
 					margin: 0;
-					font-family: Rubik;
+					
 					font-size: 1.15rem;
-					color: #ffffff;
+					color: var(--white);
 					font-weight: 700;
 					text-transform: uppercase;
 
 					span {
-						font-size: 2rem;
-						-webkit-text-stroke: .015em #E2F2F7;
-						font-weight: 600;
+						font-size: 1.75rem;
+						-webkit-text-stroke: 1px var(--white);
+						font-weight: 700;
 						letter-spacing: 5%;
-						font-family: Rubik;
-						margin: 0;
-						margin-top: 1em;
+						display: inline-block;
+						margin-top: .75em;
 						text-align: center;
 						color: transparent;
 						text-transform: uppercase;

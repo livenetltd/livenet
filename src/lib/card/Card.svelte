@@ -18,7 +18,7 @@
         { #if icon === "speed"}
             <Speed />
         {/if}
-        <h3>{title}</h3>
+        <h4>{title}</h4>
         <p>{description}</p>
     </div>
 </div>
@@ -38,14 +38,14 @@
             transform: scale(.95);
         }
         .container {
-            padding: 1em 1.30em;
-
-            h3 {
-                font-size: 0.875rem;
+            padding: 1.30em;
+            h4 {
+                margin-top: 1em;
             }
             p {
-                margin-top: 2em;
+                margin-top: 1.5em;
                 font-size: 0.688rem;
+                text-align: start;
             }
         }
     }
